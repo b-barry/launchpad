@@ -17,7 +17,7 @@ const server = express();
 server.use('/graphql', bodyParser.json(), graphqlExpress(request => ({
   schema,
   rootValue,
-  context: context(request.headers, process.env),
+  context: context ? context(request.headers, process.env) : {},
 })));
 
 server.use('/graphiql', graphiqlExpress({
