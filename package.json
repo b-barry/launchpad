@@ -15,6 +15,7 @@
     "auth0-lock": "^10.14.0",
     "babel-plugin-detective": "^2.0.0",
     "babel-plugin-transform-async-generator-functions": "^6.24.1",
+    "babel-plugin-transform-decorators": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-standalone": "^6.24.0",
@@ -119,7 +120,10 @@
     "heroku-postbuild": "npm run build-server"
   },
   "jest": {
-    "collectCoverageFrom": ["frontend/**/*.{js,jsx}", "server/**/*.{js,jsx}"],
+    "collectCoverageFrom": [
+      "frontend/**/*.{js,jsx}",
+      "server/**/*.{js,jsx}"
+    ],
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       "frontend/services/eject",
@@ -142,7 +146,9 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     }

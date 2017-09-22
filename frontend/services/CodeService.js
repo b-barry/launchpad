@@ -14,6 +14,7 @@ export async function getCodeCompiler() {
       babelPluginTransformAsyncGeneratorFunctions,
       babelPluginTransformObjectRestSpread,
       babelPluginTransformRuntime,
+      babelPluginTransformDecorators
     ] = /* prettier-ignore */ await Promise.all([
       import(/* webpackChunkName: "compiler" */ 'babel-standalone'),
       import(/* webpackChunkName: "compiler" */ './eslint/eslint'),
@@ -31,6 +32,10 @@ export async function getCodeCompiler() {
         /* webpackChunkName: "compiler" */
         'babel-plugin-transform-runtime'
       ),
+      import(
+        /* webpackChunkName: "compiler" */
+        'babel-plugin-transform-decorators'
+      ),
     ]);
     babel = babelModule;
     eslint = eslintModule;
@@ -45,6 +50,7 @@ export async function getCodeCompiler() {
       babelPluginTransformObjectRestSpread,
     );
     babel.registerPlugin('transform-runtime', babelPluginTransformRuntime);
+    babel.registerPlugin('transform-decorators', babelPluginTransformDecorators);
   }
   const linter = await getLinter();
 
@@ -67,6 +73,7 @@ export async function getCodeCompiler() {
           'transform-runtime',
           'transform-async-generator-functions',
           'transform-object-rest-spread',
+          'transform-decorators',
         ],
       });
       const { code: compiledCode, metadata } = transform;
