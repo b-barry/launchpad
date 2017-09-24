@@ -14,7 +14,7 @@ export async function getCodeCompiler() {
       babelPluginTransformAsyncGeneratorFunctions,
       babelPluginTransformObjectRestSpread,
       babelPluginTransformRuntime,
-      babelPluginTransformDecorators
+      babelPluginTransformDecorators,
     ] = /* prettier-ignore */ await Promise.all([
       import(/* webpackChunkName: "compiler" */ 'babel-standalone'),
       import(/* webpackChunkName: "compiler" */ './eslint/eslint'),
@@ -50,7 +50,10 @@ export async function getCodeCompiler() {
       babelPluginTransformObjectRestSpread,
     );
     babel.registerPlugin('transform-runtime', babelPluginTransformRuntime);
-    babel.registerPlugin('transform-decorators', babelPluginTransformDecorators);
+    babel.registerPlugin(
+      'transform-decorators',
+      babelPluginTransformDecorators,
+    );
   }
   const linter = await getLinter();
 

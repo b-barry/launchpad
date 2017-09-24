@@ -381,11 +381,7 @@ class PadContainer extends Component {
         </div>
       );
     } else if (this.hasError()) {
-      return (
-        <div>
-          {this.getErrorMessage()}
-        </div>
-      );
+      return <div>{this.getErrorMessage()}</div>;
     } else {
       let pad = this.props.padData.pad;
       const me = this.props.meData.me;
