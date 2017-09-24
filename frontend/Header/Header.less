@@ -2,7 +2,7 @@
 @import '../theme.less';
 
 .Header {
-  .background-image(linear-gradient(to right, @color-complementary 0%, #68D1AC 100%));
+  .background-image(linear-gradient(to right, @color-complementary 0%, #68d1ac 100%));
   padding: 0 1rem 0 0;
   flex: 0 0 54px;
   z-index: 2;
@@ -10,9 +10,9 @@
   flex-direction: row;
   align-items: stretch;
   color: @color-lightest;
-  box-shadow: 0 0 5px rgba(57, 70, 78, .2);
+  box-shadow: 0 0 5px rgba(57, 70, 78, 0.2);
 
-  &-Left {
+  &-left {
     flex: 0 0 auto;
     align-self: center;
     display: flex;
@@ -20,11 +20,11 @@
     align-items: center;
   }
 
-  &-Gap {
+  &-gap {
     flex: 1 1;
   }
 
-  &-Right {
+  &-right {
     flex: 0 0 auto;
     display: flex;
   }
@@ -47,7 +47,7 @@
     }
 
     button {
-      padding: 0 .5rem;
+      padding: 0 0.5rem;
     }
 
     &:not(.Title-Editor) {
@@ -61,25 +61,25 @@
     }
   }
 
-  &-LinkText {
+  &-linktext {
   }
 
-  &-Text {
+  &-text {
   }
 
-  &-Share {
+  &-share {
     display: flex;
     flex-direction: row;
   }
 
-  &-ShareUrl {
+  &-shareurl {
     margin-left: 5px;
     width: 120px;
     text-overflow: ellipsis;
     color: @color-lightest;
   }
 
-  &-SelectView {
+  &-selectview {
     padding-left: 5px;
     margin-left: 10px;
     font-weight: bold;
@@ -89,14 +89,14 @@
     border-left: 1px solid @color-lightest;
   }
 
-  &-SelectViewButton {
+  &-selectviewbutton {
     margin-left: 5px;
 
     &--active {
     }
   }
 
-  &-Title {
+  &-title {
     &--untitled {
       color: fade(@color-lightest, 70%);
     }

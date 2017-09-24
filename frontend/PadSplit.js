@@ -235,14 +235,12 @@ export default class PadSplit extends Component {
                 onChange={this.props.onCodeChange}
               />
             </div>
-            {canEdit
-              ? null
-              : <div className="editor-fork-banner">
-                  Log in and fork this pad in order to edit it.
-                </div>}
-            <div className="PadSplit-Logs">
-              {this.renderLogs()}
-            </div>
+            {canEdit ? null : (
+              <div className="editor-fork-banner">
+                Log in and fork this pad in order to edit it.
+              </div>
+            )}
+            <div className="PadSplit-Logs">{this.renderLogs()}</div>
           </div>
           <div className="PadSplit-Right">
             <GraphiQLWrapper
@@ -274,9 +272,7 @@ export default class PadSplit extends Component {
           onSetDescription={this.props.onSetDescription}
         />
 
-        <div className="PadSplit-Main">
-          {this.renderEditors()}
-        </div>
+        <div className="PadSplit-Main">{this.renderEditors()}</div>
 
         <Footer
           isDraft={this.props.pad.isDraft}
